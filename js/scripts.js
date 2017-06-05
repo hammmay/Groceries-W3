@@ -18,3 +18,5 @@ $(document).ready(function() {
     event.preventDefault();
   });
 });
+
+// NOTE: to sort them alphabetically : ArrayName.sort()
