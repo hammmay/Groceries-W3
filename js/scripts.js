@@ -1,22 +1,30 @@
 $(document).ready(function() {
-  $("#formOne").submit(function(event) {
-    var firstInput = $("input#first").val();
-    var secondInput = $("input#second").val();
-    var thirdInput= $("input#third").val();
 
-    var formArray = [firstInput, secondInput, thirdInput];
-//create an array and add 3 items to array
+    var groceryList = [];
+    $("#addItem").click(function(event){
+      event.preventDefault();
 
-    console.log(formArray);
-//simply shows the array in the consule
+      .groceryList.push($("#textfield").val());
 
-    formArray.forEach(function(form) {
-      $("#list").append("<li>" + form + "</li>")
-    });
-//puts in a loop to put in an append on the list for each input
+    $("#textField").val("");
+    $("#textField").focus();
 
-    event.preventDefault();
+    console.log(groceryList);
   });
+
+  $("#submit").click(function(event){
+    event.preventDefault();
+
+    $("#form").hide();
+
+    groceryList.sort();
+
+    groceryList.forEach(function(item){
+
+      $("#results").append("<li>" + item + "</li>");
+    });
+
+    console.log("hidden");
 });
 
 // NOTE: to sort them alphabetically : ArrayName.sort()
